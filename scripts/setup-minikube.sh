@@ -40,17 +40,17 @@ main() {
 install_ks_kubectl_minikube() {
   # Installing ksonnet if needed
   KS_VERSION=$(ks version | grep 'ksonnet version' | awk '{print $3}')
-  if [[ $KS_VERSION != "0.11.0" ]]; then
+  if [[ $KS_VERSION != "0.13.1" ]]; then
     echo -e "${YELLOW}Installing ksonnet...${NC}"
     if [[ ${PLATFORM} == $OSX ]]; then
-      curl -OL https://github.com/ksonnet/ksonnet/releases/download/v0.11.0/ks_0.11.0_darwin_amd64.tar.gz
-      tar zxf ks_0.11.0_darwin_amd64.tar.gz
-      export PATH=$PATH:$(pwd)/ks_0.11.0_darwin_amd64
+      curl -OL https://github.com/ksonnet/ksonnet/releases/download/v0.13.1/ks_0.13.1_darwin_amd64.tar.gz
+      tar zxf ks_0.13.1_darwin_amd64.tar.gz
+      export PATH=$PATH:$(pwd)/ks_0.13.1_darwin_amd64
 
     elif [[ ${PLATFORM} == $LINUX ]]; then
-      curl -OL https://github.com/ksonnet/ksonnet/releases/download/v0.11.0/ks_0.11.0_linux_amd64.tar.gz
-      tar zxf ks_0.11.0_linux_amd64.tar.gz
-      export PATH=$PATH:$(pwd)/ks_0.11.0_linux_amd64
+      curl -OL https://github.com/ksonnet/ksonnet/releases/download/v0.13.1/ks_0.13.1_linux_amd64.tar.gz
+      tar zxf ks_0.13.1_linux_amd64.tar.gz
+      export PATH=$PATH:$(pwd)/ks_0.13.1_linux_amd64
     fi
     echo -e "${GREEN}[OK]${NC}"
   fi
